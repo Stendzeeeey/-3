@@ -1,0 +1,26 @@
+TreeWork9°. Дан указатель P1 на корень непустого дерева. Вывести значения всех вершин дерева в префиксном порядке (вначале выводится значение корня, 
+затем содержимое левого поддерева в префиксном порядке, затем — содержимое правого поддерева в префиксном порядке).
+
+#include <windows.h>
+#pragma hdrstop
+#include "pt4.h"
+
+void PrintTree(PNode Root)
+{
+	if (Root != NULL)
+	{	
+		pt << Root -> Data;
+		PrintTree(Root -> Left);
+		PrintTree(Root -> Right);
+	}
+}
+
+void Solve()
+{
+    Task("TreeWork9");
+
+	PNode Root;
+	pt >> Root;
+
+	PrintTree(Root);
+}

@@ -1,0 +1,28 @@
+TreeWork19°. Дано бинарное дерево и указатель корень дерева P1. Необходимо определить, является ли дерево идеально-сбалансированным. 
+В качестве результата вывести логическое значение: True или False. Дерево называется идеально-сбалансированным, 
+если для каждой его вершины выполнено условие: число вершин ее левого и правого поддерева отличается не больше, чем на 1.
+
+
+
+#include <windows.h>
+#pragma hdrstop
+#include "pt4.h"
+using namespace std;
+
+int getbal(PNode Node, bool bal) {
+	if (Node != NULL) {
+		int lnum = getbal(Node->Left);
+		int rnum = getbal(Node->Right);
+		return 1 + lnum + rnum;
+	}
+	else return 0;
+}
+
+void Solve()
+{
+    Task("TreeWork19");
+	PNode P1; pt >> P1;
+	int num;
+	bool bal = true;
+	num = getbal(P1, bal);
+}
